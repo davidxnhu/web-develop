@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Sign In</title>
+    <style type="text/css">
+      .label {text-align: right; font-size: 24px;}
+      error {color: red; font-size: 24px;}
+    </style>
+
+  </head>
+
+  <body>
+    <h1>Login</h1>
+    <form method="post">
+      <table>
+        <tr>
+          <td class="label">
+            Username
+          </td>
+          <td>
+            <input type="text" name="username" value="{{name}}">
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            Password
+          </td>
+          <td>
+            <input type="password" name="password" value="">
+          </td>
+        </tr>
+      </table>
+        <error>{{error}}</error>
+      <br>
+      <input type="submit">
+    </form>
+  </body>
+
+</html>

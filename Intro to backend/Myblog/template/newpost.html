@@ -1,0 +1,74 @@
+<DOCTYPE html>
+
+<html>
+    <head>
+        <title>My Blog</title>
+    </head>
+
+    <style type="text/css">
+        body{
+            font-family: sans-serif;
+            width:1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .new-blog{
+            font-size: 32px;
+            font-weight:bold;
+        }
+
+        .error{
+            color:red;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        label{
+            font-weight:bold;
+            font-size: 32px;
+        }
+
+        input[type=text]{
+            width: 400px;
+            height:50px;
+            font-size: 20px;
+        }
+
+        textarea{
+            width: 800px;
+            height: 200px;
+            font-size: 17px;
+            font-family: monospace;
+        }
+
+        input[type=submit]{
+            font-size: 20px;
+        }
+   
+    </style>
+
+    <body>
+        <h1 align="center">MyBlog</h1>
+        <div class="new-blog">new post</div>
+        <br>
+        <form method="post">
+            <label>
+                <div>subject</div>
+                <input type="text" name="subject" value="{{subject}}">
+            </label>
+            <br>
+            <label>
+                <div>blog</div>
+                <textarea name="blog">{{blog}}</textarea>
+            </label>
+
+            <div class=error>
+                {{error}}
+            </div>
+
+            <input type="submit">
+        </form>
+    </body>
+
+
+</html>

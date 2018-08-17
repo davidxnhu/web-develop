@@ -1,0 +1,98 @@
+<DOCTYPE html>
+
+<html>
+    <head>
+        <title>My Blog</title>
+    </head>
+
+    <style type="text/css">
+        body{
+            position: relative;
+            font-family: sans-serif;
+            width:800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .login-area{
+            font-size: 13px;
+            color: gray;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .login-link {
+            color: gray;
+            text-decoration: none;
+        }
+
+        .login-link:visited {
+            color: gray;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        hr{margin: 5px auto;}
+
+        .post + .post{
+            margin-top:20px;
+        }
+        
+        .post-heading {
+            position: relative;
+            border-bottom: 3px solid #666;
+        }
+
+        .post-title{
+            font-weight: bold;
+            font-size: 32px;
+            text-decoration: none;
+            color:#333;
+        }
+
+        .post-date{
+            position: absolute;
+            align-content:right;
+            right: 0px;
+            bottom: 0px;
+            color:#999;
+        }
+
+        .post-body{
+            margin-top: 5px;
+            font-size: 20px;
+        }
+    
+    </style>
+
+    <body>
+        <h1 style=font-size:40px align="center">My Blog</h1>
+        <div class="login-area">
+            <a class="login-link" href="/myblog/signin">login</a>
+            |
+            <a class="login-link" href="/myblog/signup">signup</a>
+        
+        </div>
+
+        {% if blogs: %}
+            {% for blog in blogs %}
+                <div class="post">
+                    <div class="post-heading">
+                        <a href="/myblog/{{blog.key().id()}}" class="post-title">{{blog.subject}}</a>
+                        <div class="post-date">{{blog.created.strftime("%b %d, %Y")}}</div>
+                    </div>
+
+                    <div class="post-body">
+                        {{blog.render()|safe}}
+                    </div>
+                </div>
+            {% endfor %}
+        {%endif %}
+
+    </body>
+
+
+</html>
